@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta Regresiva</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imgs/WhatsApp Image 2025-04-09 at 02.58.17-fotor-2025040932212.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff  ;
+        }
+        #countdown {
+            font-size: 2em;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>CUENTA REGRESIVA</h1>
+    <div id="countdown"></div>
+    <style>
+        .countdown-container {
+            display: flex;
+            gap: 10px;
+        }
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .countdown-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border: 2px solid #000;
+            padding: 10px;
+            height: 100px;
+            width: 100px;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .botoncete{
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #000;
+            border-radius: 4px;
+        }
+
+        .btn {
+            position: relative;
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #91C9FF;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+
+.btn:hover {
+  transition: 1s ease-in-out;
+  background: #4F95DA;
+}
+
+.btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.btn span {
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+        
+    </style>
+    <div class="countdown-container">
+        <div class="countdown-item">
+            <div id="days" class="countdown-number"></div>
+            <div>Días</div>
+        </div>
+        <div class="countdown-item">
+            <div id="hours" class="countdown-number"></div>
+            <div>Horas</div>
+        </div>
+        <div class="countdown-item">
+            <div id="minutes" class="countdown-number"></div>
+            <div>Minutos</div>
+        </div>
+        <div class="countdown-item">
+            <div id="seconds" class="countdown-number"></div>
+            <div>Segundos</div>
+        </div>
+    </div>
+
+
+   
+    </div>
+    <script>
+        function updateCountdown() {
+            const targetDate = new Date('April 9, 2025 05:50:00').getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerHTML = days;
+            document.getElementById('hours').innerHTML = hours;
+            document.getElementById('minutes').innerHTML = minutes;
+            document.getElementById('seconds').innerHTML = seconds;
+
+            if (distance < 0) {
+                clearInterval(interval);
+                window.location.href = 'index2.html';
+            }
+        }
+
+        const interval = setInterval(updateCountdown, 1000);
+    </script>
+
+    
+    
+</body>
+</html>
