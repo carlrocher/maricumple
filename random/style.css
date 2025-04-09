@@ -1,0 +1,46 @@
+/*** ESTILOS BOTÓN SLIDE RIGHT ***/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.botoncete {
+    background: #fff; /* color de fondo */
+    color: #33b8ff; /* color de fuente */
+    border: 2px solid #33b8ff; /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .botoncete:hover {
+    color: #fff; /* color de fuente hover */
+  }
+  .botoncete::after {
+    content: "";
+    background: #33b8ff;
+
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .botoncete:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }

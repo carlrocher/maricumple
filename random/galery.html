@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="styleslider.css">
+    <link rel="stylesheet" href="stylepng.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="chat.css">   
+    <link rel="stylesheet" href="slider.css"> 
+    <link rel="stylesheet" href="polaroid.css">  
+    <link rel="stylesheet" href="carta.css">
+    <link rel="icon" href="imgs/WhatsApp Image 2025-04-09 at 02.58.17-fotor-2025040932212.png">
+    
+    <title>19 años mi amor</title>
+</head>
+<body>
+    <style>
+        body {
+          width: 100%;
+          height: fit-content;
+          margin: 0;
+          padding: 0;
+        }
+        .stack-area {
+          width: 100%;
+          height: 300vh;
+          position: relative;
+          background: white;
+          display: flex;
+        }
+        .left {
+          height: 100vh;
+          flex-basis: 50%;
+          position: sticky;
+          top: 0;
+          left: 0;
+        }
+        .right {
+          height: 100vh;
+          flex-basis: 50%;
+          position: sticky;
+          top: 0;
+        }
+        /*Styling for the left elements content starts here...*/
+        .left {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          align-items: center;
+          flex-direction: column;
+        }
+        .title {
+          width: 420px;
+          font-size: 84px;
+          font-family: poppins;
+          font-weight: 700;
+          line-height: 88px;
+        }
+        .sub-title {
+          width: 420px;
+          font-family: poppins;
+          font-size: 14px;
+          margin-top: 30px;
+        }
+        .sub-title button {
+          font-family: poppins;
+          font-size: 14px;
+          padding: 15px 30px;
+          background: black;
+          color: white;
+          border-radius: 8mm;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          margin-top: 20px;
+        }
+        /*Styling for the left elements content ends here...*/
+  
+        .card {
+          width: 350px;
+          height: 350px;
+          border-radius: 25px;
+          margin-bottom: 10px;
+          position: absolute;
+          top: calc(50% - 175px);
+          left: calc(50% - 175px);
+          transition: 0.5s ease-in-out;
+        }
+        .card:nth-child(1) {
+          background: #1b4275;
+        }
+        .card:nth-child(2) {
+          background: #d04541;
+        }
+        .card:nth-child(3) {
+          background: #98799c;
+        }
+        .card:nth-child(4) {
+          background: #e093e6;
+        }
+  
+        /*Styling for the card content starts here...*/
+        .card {
+          box-sizing: border-box;
+          padding: 35px;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+        }
+        .sub {
+          font-family: poppins;
+          font-size: 20px;
+          font-weight: 700;
+        }
+        .content {
+          font-family: poppins;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 54px;
+        }
+        /*Styling for the card content ends here...*/
+  
+        .away {
+          transform-origin: bottom left;
+        }
+      </style>
+    
+
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap);
+    
+    *,
+    ::before,
+    ::after {
+        box-sizing: border-box;
+    }
+
+
+    .envelope {
+        --duration: 1000ms;
+    
+        --shadow-width: calc(var(--envelope-width) * 0.85);
+        --shadow-blur: 15px;
+    
+        --envelope-width: 300px;
+        --envelope-height: 175px;
+        --envelope-clr-bg: #d14d44;
+        --envelope-clr-bg-side: #c24e46;
+        --envelope-clr-bg-bottom: #e15349;
+        --envelope-clr-bg-top: #d14d44;
+        --envelope-clr-txt: #fff;
+    
+        /*--envelope-transform: rotateY(0deg);*/
+        --envelope-transform-hover: rotateY(180deg);
+        --evelope-rotate-delay: calc(var(--duration) / 1);
+        --evelope-rotate-delay-hover: 0ms;
+    
+        --letter-clr-bg: #fff;
+        --letter-clr-text: #c0392b;
+        --letter-font-size: 1rem;
+        --letter-delay: 0ms;
+        --letter-delay-hover: calc(
+            var(--duration) * 1.25
+        ); /* delay before revealing card */
+    
+        --letter-height: calc(var(--envelope-height) - 2rem);
+        --letter-height-hover: calc(var(--envelope-height) * 1.75);
+    
+        --fold-rotate: rotateX(0deg);
+        /*--fold-zindex: 10;*/
+        --fold-zindex-hover: 0;
+        --fold-rotate-hover: rotateX(180deg);
+        --fold-delay: calc(var(--duration) / 2); /* delay before opening top section */
+        --fold-delay-hover: calc(var(--duration) * .75);
+    
+        --front-font-size: 1rem;
+        --snowman-width: 50px;
+        --bells-width: 30px;
+    
+        position: relative;
+        height: var(--envelope-height);
+        width: var(--envelope-width);
+        perspective: 1000px;
+        cursor: pointer;
+    }
+    
+    @media (min-width: 720px) {
+        .envelope {
+            --envelope-width: 600px;
+            --envelope-height: 350px;
+            --letter-font-size: 1.6rem;
+            --snowman-width: 130px;
+            --bells-width: 60px;
+            --front-font-size: 1.25rem;
+        }
+    }
+    /* shadow */
+    .envelope::after {
+        content: "";
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        width: var(--shadow-width);
+        height: 40px;
+        transition: var(--duration) ease-in-out;
+        transition-delay: var(--evelope-rotate-delay);
+        transform: var(--shadow-transform);
+        translate: -50% 0;
+        border-radius: 50%;
+        background: rgba(56, 6, 6, 0.4);
+        filter: blur(var(--shadow-blur));
+    }
+    
+    .envelope:hover {
+        --envelope-transform: var(--envelope-transform-hover, 0deg);
+        --evelope-rotate-delay: var(--evelope-rotate-delay-hover);
+        --shadow-transform: rotateY(180deg);
+        --fold-rotate: var(--fold-rotate-hover);
+        --fold-delay: var(--fold-delay-hover);
+        --fold-zindex: var(--fold-zindex-hover);
+        --letter-height: var(--letter-height-hover);
+        --letter-delay: var(--letter-delay-hover);
+    }
+    
+    .envelope-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    
+        transition: var(--duration) ease-in-out;
+        transition-delay: var(--evelope-rotate-delay);
+        transform-style: preserve-3d;
+        transform: var(--envelope-transform);
+        display: grid;
+    }
+    
+    .envelope-front,
+    .envelope-back {
+        position: relative;
+        grid-area: 1/1;
+        width: 100%;
+        height: 100%;
+        background-color: var(--envelope-clr-bg);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        perspective: 1000px;
+        isolation: isolate;
+    }
+    
+    .envelope-front {
+        color: var(--envelope-clr-txt);
+        display: grid;
+        place-content: center;
+    }
+    .envelope-front .postage-stamp {
+        position: absolute;
+        top: 1em;
+        right: 0.5em;
+        width: 15%;
+    }
+    .envelope-front .address {
+        text-align: left;
+        font-size: var(--front-font-size);
+    }
+    .envelope-front .address > p > span:first-child {
+        font-family: system-ui;
+        font-weight: 200;
+    }
+    .envelope-front .address > p > span:last-of-type {
+        font-weight: 800;
+    }
+    
+    .envelope-back {
+        /* start with back rotated*/
+        transform: rotateY(180deg);
+    }
+    /* back folds */
+    .envelope-back::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        background-image: conic-gradient(
+            transparent 60deg,
+            var(--envelope-clr-bg-side) 60deg 120deg,
+            var(--envelope-clr-bg-bottom) 120deg 240deg,
+            var(--envelope-clr-bg-side) 240deg 300deg,
+            transparent 300deg
+        );
+    }
+    /* top fold which folds up on hover */
+    .envelope-back .top-fold {
+        position: absolute;
+        inset: 0;
+        z-index: var(--fold-zindex, 10);
+        background-color: var(--envelope-clr-bg-top);
+        clip-path: polygon(0% 0%, 50% 55%, 100% 0%);
+    
+        transform: var(--fold-rotate);
+        transform-origin: top;
+        transition: var(--duration) ease-in-out;
+        transition-delay: var(--fold-delay);
+    }
+    
+    .letter {
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 90%;
+        height: var(--letter-height);
+        font-size: var(--letter-font-size);
+        transform: translateX(-50%);
+        background: var(--letter-clr-bg);
+        z-index: 2;
+        padding: 2em 3em;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        text-align: center;
+        transition: var(--duration) ease-in-out;
+        transition-delay: var(--letter-delay);
+        overflow: hidden;
+    }
+    .letter > svg.snowman {
+        width: var(--snowman-width);
+    }
+    .letter svg.bells {
+        width: var(--bells-width);
+        color: orange;
+    }
+    .letter p {
+        margin: 0;
+        font-weight: bold;
+        width: 32ch;
+        color: var(--letter-clr-text);
+    }
+    
+    .custom-image {
+        width: 100px;
+        height: 100px;
+        object-fit: contain; 
+    }
+    .custom-image2 {
+        width: 150px;
+        height: 150px;
+        object-fit: contain; 
+    }
+    
+    .highlight {
+        display: block; 
+        margin-top: 10px; 
+        font-size: 1.8rem;  
+        font-weight: bold; 
+    }
+    
+    </style>
+    <section class="section0">
+    <div class="envelope">
+    
+        <div class="envelope-inner">
+    
+            <div class="envelope-front">
+    
+                <div class="postage-stamp ">
+                    <svg fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" xml:space="preserve">
+                        <path d="M253.98,257.652c0-8.568,8.568-17.748,17.136-18.361c-1.224-4.895-1.224-10.402-0.611-15.299 c-3.061,0.611-7.345,0-10.404-1.225c-6.12-3.061-9.792-9.18-9.792-15.912c0-9.18,7.956-20.807,17.136-21.42 c0-2.447,0.612-4.896,0.612-7.344s0.612-4.896,0.612-7.344c-7.956,3.061-17.137-4.283-18.973-12.24 c-1.836-9.792,4.284-17.748,12.853-21.42c-0.612-1.836-0.612-4.284-0.612-6.12c0-3.672,0-7.344,0.612-11.016 c-3.061,0-6.12-1.224-9.181-3.06c-4.283-3.06-6.731-7.344-7.344-12.24c0-0.612,0-1.836,0-2.448c0-9.792,8.568-15.3,17.136-16.524 c-0.611-3.672,0-7.956,0-11.628c0-3.06,0-6.12,0.612-9.18c-7.956,2.448-18.36-4.284-20.808-12.24 c-2.448-7.956,1.836-17.748,9.792-20.808c-1.225-3.06-1.225-6.732-1.225-10.404c0-3.06-0.611-6.732-0.611-9.792 c-9.792,12.24-39.168,4.284-40.393-9.18C205.632,3.672,200.124,1.836,195.84,0c0.611,9.18-7.956,17.748-17.137,17.748 c-9.18,0-16.523-6.732-18.359-15.3c-2.448,0-4.896,0-6.732-0.612c-2.448,0-4.896-0.612-7.956-1.224c0,4.284-2.448,9.18-5.508,12.24 c-3.672,3.672-9.18,6.12-14.076,6.12c-1.224,0-2.448,0-3.672-0.612c-5.508-1.224-12.24-4.896-14.076-11.016 c0-0.612,0-0.612,0-1.224c-4.896,0.612-11.016-0.612-15.912-2.448c-0.612,8.568-9.18,15.3-18.36,14.076 c-4.284-0.612-9.792-3.06-11.016-7.344c0-0.612,0-0.612,0-1.224c0,0,0,0.612-0.612,0.612c-3.672,3.06-8.568,2.448-12.852,1.836 c-1.224,0-2.448,0-3.672,0c1.224,0.612,1.836,1.836,2.448,2.448c3.672,4.896,5.508,11.016,3.06,17.136 c-3.06,8.568-14.076,12.24-22.032,9.18c0,1.224-0.612,1.836-0.612,3.06c-0.612,3.672-0.612,6.732-0.612,10.404 c9.792-1.224,22.644,1.224,23.868,12.852c0.612,5.508-3.06,11.016-8.568,12.852c-2.448,1.224-5.508,1.224-7.956,1.224 c-0.612,0-1.224,0-2.448-0.612c0,1.836,0,4.284,0,6.12c0,3.672,0.612,7.344-0.612,11.016l0,0c0.612,0,0.612-0.612,1.224-0.612 c11.628-3.672,23.256,7.344,19.584,18.972c-1.224,4.896-5.508,8.568-9.792,10.404c-3.672,1.224-6.732,1.836-10.404,1.836 c-0.612,1.836-0.612,3.06-1.224,4.896c-0.612,2.448-0.612,5.508-0.612,7.956c8.568-4.284,22.032-1.836,22.644,9.18 c0.612,9.179-10.404,24.48-21.42,23.869c0,1.223,0,3.059,0,4.283c0,2.447-0.612,4.896-0.612,7.957 c2.448-1.225,6.12-1.836,9.18-1.836c6.12,0.611,11.016,4.895,12.24,11.016c3.672,13.463-9.18,22.643-20.808,20.807 c-0.612,4.285-1.224,9.793-1.836,13.465c5.508-4.283,17.748-3.061,21.42,4.283c8.568,15.912-8.568,25.705-22.032,28.152 c0,4.896,0,10.404-1.224,15.301c7.344-4.285,18.36-4.285,25.704,0c7.956,4.896,11.628,13.463,11.628,22.031 c3.672-0.611,7.344-1.223,11.016-1.223c0-8.568,9.18-20.197,16.524-20.809c4.896-0.613,9.792,2.447,11.628,7.344 c1.836,4.283,1.224,9.791,3.06,14.076c0.612,0,1.224-0.611,1.836-0.611c3.06,0,4.896-0.613,7.344-1.838 c-0.612-1.836,0-3.672,0.612-6.119c1.224-4.896,5.508-9.18,10.404-10.404c11.016-3.061,19.584,4.896,22.645,14.688 c3.672-0.611,7.344-0.611,11.628-0.611c1.836,0,3.672,0,5.508,0.611c-2.448-8.566,4.284-18.971,13.464-19.584 c0.612,0,1.224,0,1.836,0c5.508,0,10.404,3.061,13.464,6.732c1.836,2.449,3.672,5.508,4.284,8.568c1.224,0,2.448,0,4.284,0 s3.672,0,5.508,0c1.224-7.955,9.792-14.076,17.748-14.688c7.956-0.613,15.912,3.672,19.584,11.016 c5.508-3.672,13.464-6.119,20.808-6.119c0-2.449,0-4.896,0-7.957C261.936,273.564,253.98,264.996,253.98,257.652z M243.576,266.221 c0,4.283-6.12,4.283-6.12,0l0,0c-3.672-77.725-4.896-155.449-9.792-233.173c-0.611,0.612-1.224,0.612-2.447,0.612 c-52.633,0-105.264,1.836-157.896,1.836c0,0,0,0-0.612,0c6.732,15.3,3.06,41.616,3.06,57.528c0,17.748,0,35.496,0,53.856 c0,39.78,0,79.56-1.224,119.341c0,1.836-1.224,3.059-2.448,3.672c50.796-12.854,115.668-14.076,167.688-6.732 c1.836,0.611,3.061,1.836,3.061,3.672s-1.225,4.283-3.672,4.896c-15.912,0.611-31.824,0.611-47.736,0.611 c-12.852,0-25.704,0-39.168,0.611c-26.316,1.225-53.856,4.285-79.56,0.613c-1.836,0-1.836-3.061,0-3.672 c-2.448,1.223-6.732,0-6.12-3.672c1.224-76.5-1.836-154.225,3.06-230.725c0-2.448,0-4.896,0.612-7.344c0-3.06,4.284-3.06,4.284,0 c0,0.612,0,1.224,0,1.224c19.584-2.448,39.168-3.672,59.364-4.896c33.048-1.224,66.097-1.224,98.532-0.612 c1.224,0,2.448,0.612,3.06,1.224c1.837-2.448,6.732-1.836,7.345,2.448c2.447,25.704,4.896,51.408,6.12,77.112 C244.8,158.508,246.024,212.977,243.576,266.221z M152.388,192.168c-3.06,1.836-6.732-0.611-7.344-3.061l0,0c0,0,0,0-0.612-0.611 c-30.6-7.957-63.036-45.9-55.692-77.112c3.06-12.852,15.3-26.316,29.988-22.032c12.852,3.672,22.032,19.584,28.152,32.436 c6.12-15.3,16.524-34.272,30.6-40.392c11.628-4.896,22.644,0,27.54,11.628C219.708,127.908,178.704,174.42,152.388,192.168z"></path>
+                    </svg>
+                </div>
+    
+                <div class="address">
+                    <p><span>Para:</span> <span>Mi amor</span></p>
+                    <p><span>De:</span> <span>Said</span></p>
+                </div>
+    
+            </div>
+    
+            <div class="envelope-back">
+                <div class="top-fold"></div>
+    
+                <div class="letter">
+    
+                    
+                    <img src="https://img.freepik.com/vector-premium/pulgar-dedos-imprimir-marca-huella-dactilar-amor-corazon_53500-1839.jpg" alt="love1" class="custom-image">
+                
+                    <p>Mi amor por vos sigue intacto, <span class="highlight">como aquel primer día en que decidí entregártelo</span></p>
+                
+                    
+                    <img src="imgs/WhatsApp Image 2025-03-22 at 00.51.34.jpeg" alt="love2" class="custom-image2">
+                
+                </div>
+                
+            </div>
+        </div>
+    
+    </div>
+    </section>
+    <!-- partial -->
+     
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4704501585981299"
+         crossorigin="anonymous"></script>
+    
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+      });
+      
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'F12') {
+          e.preventDefault();
+        }
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+          e.preventDefault();
+        }
+        if (e.ctrlKey && e.key === 'u') {
+          e.preventDefault();
+        }
+      });
+    </script>
+
+
+<section class="seccion1 intro">
+    <h1>Acompañame a revivir algunos momentos 💟</h1>
+    <button class="flecha" onclick="irASeccion2()">↓</button>
+
+</section>
+
+
+<section id="seccion2">
+    <h2>Nuestra primer conversación</h2>
+    <div class="chat-container">
+        
+        <div class="chat-header">
+            <p>imarikena</p>
+            <img src="imgs/WhatsApp Image 2025-04-09 at 02.58.17-fotor-2025040932212.png" alt="mari">
+        </div>
+        <div class="chat-box" id="chat-box">
+          <div class="message received">
+            Holaa
+          </div>
+        </div>
+        <div class="input-container">
+          <button id="next-button">Siguiente</button>
+        </div>
+    </div>
+    <p>(y mi primer mentira jiji)</p>
+
+</section>
+<section class="seccion3">
+    <h2>Las primeras fotos que te enviaba</h2>
+
+    <div class="slider">
+        <div class="list">
+            <div class="item">
+                <img src="imgs/WhatsApp Image 2025-04-09 at 01.05.13 (3).jpeg" alt="">
+            </div>
+            <div class="item">
+                <img src="imgs/WhatsApp Image 2025-04-09 at 01.05.13.jpeg" alt="">
+            </div>
+            <div class="item">
+                <img src="imgs/WhatsApp Image 2025-04-09 at 01.05.14 (1).jpeg" alt="">
+            </div>
+            <div class="item">
+                <img src="imgs/WhatsApp Image 2025-04-09 at 01.05.14.jpeg" alt="">
+            </div>
+            <div class="item">
+                <img src="imgs/WhatsApp Image 2025-04-09 at 03.32.15 (1).jpeg" alt="">
+            </div>
+            <div class="item">
+                <img src="imgs/WhatsApp Image 2025-04-09 at 03.32.15 (2).jpeg" alt="">
+            </div>
+            <div class="item">
+                <img src="imgs/WhatsApp Image 2025-04-09 at 03.32.15 (3).jpeg" alt="">
+            </div>
+            <div class="item">
+                <img src="imgs/WhatsApp Image 2025-04-09 at 03.32.15 (4).jpeg" alt="">
+            </div>
+            <div class="item">
+                <img src="imgs/WhatsApp Image 2025-04-09 at 03.32.15 (5).jpeg" alt="">
+            </div>
+            <div class="item">
+                <img src="imgs/WhatsApp Image 2025-04-09 at 03.32.15.jpeg" alt="">
+            </div>
+            <div class="item">
+                <img src="imgs/WhatsApp Image 2025-04-09 at 01.05.13 (1).jpeg" alt="">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="prev">&lt</button>
+            <button id="next">&gt</button>
+        </div>
+        <ul class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+   <div class="p-separated">
+  <p>Puras fotos de bichos (incluida la del ojete verde)(las de mi cara tmb a quien engaño)</p>
+  <p>Mientras hacia la página me di cuenta que parece mas de nuestro aniversario que de cumpleaños</p>
+
+    </div>
+</section>
+<section class="seccion7"></section>
+    <section class="seccion8">
+    
+        <div class="stack-area">
+            <div class="left">
+            <div class="title">Felices 19 años mi amor</div>
+            <div class="sub-title">
+                Sos la persona más especial en mi vida y te mereces el mejor cumpleaños de todos. Siempre vas a ocupar un lugar en mi corazón y siempre voy a amarte.
+                <br />
+                <button onclick="irASeccion10()">Ver video</button>
+            </div>
+            </div>
+            <div class="right">
+            <div class="card">
+             
+                <div class="content">Y</div>
+            </div>
+            <div class="card">
+          
+                <div class="content">COMO</div>
+            </div>
+            <div class="card">
+               
+                <div class="content">OLVIDARNOS</div>
+            </div>
+            <div class="card">
+       
+                <div class="content">De nuestro hijo Nicodemus</div>
+            </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="seccion9"></section>
+    <section class="seccion10" id="seccion10">
+        <video src="imgs/WhatsApp Video 2025-04-09 at 03.32.15.mp4" controls></video>
+    </section>
+    <section class="seccion11">
+        <figure>
+            <img src="imgs/mirada.jpeg" alt="my_photo">
+            <figcaption>Siempre mirandote a vos y solo a vos</figcaption>
+        </figure>
+        <figure>
+            <img src="imgs/WhatsApp Image 2025-04-09 at 05.02.50.jpeg" alt="my_photo">
+            <figcaption>Nuestra foto más preciada</figcaption>
+        </figure>
+        <figure>
+            <img src="imgs/trainer.jpeg" alt="my_photo">
+            <figcaption>Mi entrenadora</figcaption>
+        </figure>
+    </section>
+   
+    <section class="seccion12">
+        <p class="psorpresa">Una sorpresa para ti...</p>
+
+    <div class="contenedor" id="AbrirContenedor">
+        <div class="contenedor">
+            <div class="envoltura-sobre">
+                <div class="sobre">
+                    <div class="carta">
+                        <div class="contenido">
+                            <strong>Mari</strong>
+                            <p>
+                               Pese a las adversidades de nuestra vida y a las presentes al día de tu cumpleaños considero logico cierto grado de desanimo y tristeza por tu parte pese a lo especial del día, no obstante, no tenes que dejarte ganar por estos sentimientos, como siempre te dije, tenes que recordar que hay una persona en el mundo, mejor dicho, vos encontraste a una persona entre 8 mil millones a la cual realmente le importas y esta dispuesto a todo por vos, sos el amor mas puro que conocí y no quisiera perderte jamas y este día deberia ser genial, cumplis 19, ya un año que te conozco, un año lleno de peleas pero tambien un año donde finalmente llegamos a la paz entre nosotros y donde, si despues de tantos problemas no nos abandonamos el uno al otro, es porque realmente hay algo entre nosotros más fuerte que cualquier cosa, más fuerte que las peleas, más furte que el odio, la envidia, los celos ajenos, y eso es "mucho muy importante", vas a lograr grandes cosas en la vida y yo siempre estare para cuando me necesites. Te amo muchisimo y te deseo el mejor cumple de todos. Aca viene la parte clasica de mi lamento. Tenia muchas mas ideas sobre esta página web, como por ejemplo poner videos de tu familia diciendote "oh feliz cumple mari dame chocho" pero debido a la reciente pelea tuve que cancelar esta idea. Habia varias ideas más pero debido al escaso tiempo esto fue lo que se logro, aún así espero que cumpla tus espectativas mi amor. Posiblemente cuando leas esto ya me habre ido a mi casita a dormir y no quedara mucho tiempo ya que tendre que levantarme tempranillo para pasarte a buscar y pasar un dia sensacional. Retomando el principio; mi amor, no debes dejar que las influencias ajenas arruien tu día, tu solo olvida todo y dejame a mi hacer el trabajo concerniente a tu entretenimiento y distracción. Ahora yo me ocupo de ti. Mi musa, mi dama, mi doncella, mi princesa, mi amor, mi arche. Dicho todo esto, repito; felices 19 años (20) y <bold>te amo<bold> con todo mi corazon. Tu amor, Said.       
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="corazon"></div>
+                <div class="solapa-derecha"></div>
+                <div class="solapa-izquierda"></div>
+            </div>
+        </div>
+    </section>
+    <!--
+    <section id="seccion1">
+        
+    </section>
+    <section id="seccion2">
+        <div class="book">
+            <div class="page" id="page1">
+                <div class="face front">
+                    <img src="imgs/WhatsApp Image 2025-03-22 at 00.43.18.jpeg" alt="Foto 1">
+                    <p>Esta es la historia de nuestro primer encuentro...</p>
+                </div>
+                <div class="face back">
+                    <img src="imgs/imagen2.jpeg" alt="Foto 2">
+                    <p>Este es otro capítulo de nuestra historia...</p>
+                </div>
+            </div>
+            <div class="page" id="page2">
+                <div class="face front">
+                    <img src="imgs/imagen3.jpeg" alt="Foto 3">
+                    <p>Y aquí es donde todo comenzó a cambiar...</p>
+                </div>
+                <div class="face back">
+                    <img src="imgs/imagen4.jpeg" alt="Foto 4">
+                    <p>Un recuerdo especial de aquel día...</p>
+                </div>
+            </div>
+            <div class="page" id="page3">
+                <div class="face front">
+                    <img src="imgs/imagen5.jpeg" alt="Foto 5">
+                    <p>Nuestro primer viaje juntos...</p>
+                </div>
+                <div class="face back">
+                    <img src="imgs/imagen6.jpeg" alt="Foto 6">
+                    <p>El inicio de una nueva etapa...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="seccion3">
+
+    </section>
+    <script>
+        const book = document.querySelector('.book');
+const pages = document.querySelectorAll('.page');
+let currentPage = 0;
+let touchStartX = 0;
+
+// Asegurar que cada página tiene su origen correcto y orden de apilado
+pages.forEach((page, index) => {
+    page.style.zIndex = pages.length - index;
+    page.style.transformOrigin = "left center";
+});
+
+document.addEventListener('wheel', (event) => {
+    if (event.deltaY > 0) {
+        nextPage();
+    } else {
+        prevPage();
+    }
+});
+
+document.addEventListener('touchstart', (event) => {
+    touchStartX = event.touches[0].clientX;
+});
+
+document.addEventListener('touchmove', (event) => {
+    let touchEndX = event.touches[0].clientX;
+    if (touchStartX - touchEndX > 50) {
+        nextPage();
+    } else if (touchEndX - touchStartX > 50) {
+        prevPage();
+    }
+});
+
+function nextPage() {
+    if (currentPage < pages.length) {
+        pages[currentPage].style.transform = "rotateY(-180deg)";
+        pages[currentPage].style.zIndex = currentPage;
+        currentPage++;
+    }
+}
+
+function prevPage() {
+    if (currentPage > 0) {
+        currentPage--;
+        pages[currentPage].style.transform = "rotateY(0deg)";
+        pages[currentPage].style.zIndex = pages.length - currentPage;
+    }
+}
+
+    </script>
+-->
+
+<!--este es el de la seccion1 que manda a la seccion 2-->
+<script>
+    function irASeccion2() {
+      document.getElementById("seccion2").scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+  <script>
+    function irASeccion10() {
+      document.getElementById("seccion10").scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+  <script src="chat.js"></script>
+  <script src="slider.js"></script>
+  <script>
+    let cards = document.querySelectorAll(".card");
+
+    let stackArea = document.querySelector(".stack-area");
+
+    function rotateCards() {
+      let angle = 0;
+      cards.forEach((card, index) => {
+        if (card.classList.contains("away")) {
+          card.style.transform = `translateY(-120vh) rotate(-48deg)`;
+        } else {
+          card.style.transform = ` rotate(${angle}deg)`;
+          angle = angle - 10;
+          card.style.zIndex = cards.length - index;
+        }
+      });
+    }
+
+    rotateCards();
+
+    window.addEventListener("scroll", () => {
+      let distance = window.innerHeight * 0.5;
+
+      let topVal = stackArea.getBoundingClientRect().top;
+
+      let index = -1 * (topVal / distance + 1);
+
+      index = Math.floor(index);
+
+      for (i = 0; i < cards.length; i++) {
+        if (i <= index) {
+          cards[i].classList.add("away");
+        } else {
+          cards[i].classList.remove("away");
+        }
+      }
+      rotateCards();
+    });
+  </script>
+  <script src="carta.js"></script>
+ 
+</body>
+</html>

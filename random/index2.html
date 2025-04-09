@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumple Marikena</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="imgs/WhatsApp Image 2025-04-09 at 02.58.17-fotor-2025040932212.png">
+    <audio id="background-audio" src="music/my-universe-147152.mp3" preload="auto" loop></audio>
+</head>
+<body>
+    <h1>Feliz cumpleaños <span id="marikena" style="background: linear-gradient(to right, #007BFF, #00FF7F); -webkit-background-clip: text; color: transparent;">Marikena</span></h1>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const text = "Marikena";
+            let i = 0;
+            const speed = 150; // typing speed in milliseconds
+            const element = document.getElementById("marikena");
+            element.textContent = "";
+
+            function typeWriter() {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            } else {
+                setTimeout(() => {
+                i = 0;
+                element.textContent = "";
+                typeWriter();
+                }, 1000); // wait 2 seconds before repeating
+            }
+            }
+
+            typeWriter();
+        });
+        ;
+    </script>
+    <bold>Hecho con amor por Said ❤️</bold>
+    <script>
+        function redirection(){
+            window.location.href = "galery.html";
+        }
+    </script>
+    <button onclick="redirection()">Ingresar</button>
+</body>
+</html>
